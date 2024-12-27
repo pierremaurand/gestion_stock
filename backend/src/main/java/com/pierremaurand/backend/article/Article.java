@@ -1,7 +1,5 @@
 package com.pierremaurand.backend.article;
 
-import java.beans.Transient;
-
 import com.pierremaurand.backend.categorie.Categorie;
 import com.pierremaurand.backend.common.BaseEntity;
 
