@@ -29,6 +29,9 @@ public class Vente extends BaseEntity{
     @Column(name = "date_vente")
     private LocalDate dateVente; 
 
+    @Column(name = "entreprise_id")
+    private Integer entrepriseId;
+
     @OneToMany(mappedBy = "vente")
     private List<LigneVente> ligneVentes;
 }

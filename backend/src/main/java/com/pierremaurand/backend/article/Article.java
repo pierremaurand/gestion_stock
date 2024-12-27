@@ -27,22 +27,23 @@ public class Article extends BaseEntity{
 
     private String designation;
 
-    @Column(name = "prix_unitaire")
-    private double prixUnitaire;
+    @Column(name = "prix_unitaire_ht")
+    private double prixUnitaireHt;
 
     @Column(name = "taux_txa")
     private double tauxTva; 
 
+    @Column(name = "prix_unitaire_ttc")
+    private double prixUnitaireTtc;
+
     private String photo;
+
+    @Column(name = "entreprise_id")
+    private Integer entrepriseId;
 
     @ManyToOne
     @JoinColumn(name = "categorie_id")
     private Categorie categorie;
-
-    @Transient
-    public double getPrixTtc() {
-        return Math.round(prixUnitaire * (1 + tauxTva/100.00));
-    }
 
     
 }

@@ -4,6 +4,7 @@ import com.pierremaurand.backend.article.Article;
 import com.pierremaurand.backend.commandeFournisseur.CommandeFournisseur;
 import com.pierremaurand.backend.common.BaseEntity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -28,6 +29,12 @@ public class LigneCommandeFournisseur extends BaseEntity{
     private Article article;
 
     private double quantite;
+
+    @Column(name = "prix_unitaire")
+    private double prixUnitaire;
+
+    @Column(name = "entreprise_id")
+    private Integer entrepriseId;
 
     @ManyToOne
     @JoinColumn(name = "commande_fournisseur_id")

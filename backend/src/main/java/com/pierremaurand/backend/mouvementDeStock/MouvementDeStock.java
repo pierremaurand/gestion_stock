@@ -33,6 +33,9 @@ public class MouvementDeStock extends BaseEntity{
     @Column(name = "type_mouvement")
     private TypeMouvement typeMouvement;
 
+    @Column(name = "entreprise_id")
+    private Integer entrepriseId;
+
     @ManyToOne
     @JoinColumn(name = "article_id")
     private Article article;

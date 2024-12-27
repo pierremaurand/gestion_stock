@@ -24,12 +24,19 @@ import lombok.experimental.SuperBuilder;
 @Entity
 public class Entreprise extends BaseEntity{
 
-    private String raisonSociale;
+    private String nom;
+
+    private String description;
 
     @Embedded
     private Adresse adresse;
 
-    private String logo; 
+    @Column(name = "code_fiscale")
+    private String codeFiscale;
+
+    private String email;
+
+    private String photo; 
 
     @Column(name = "site_web")
     private String siteWeb;

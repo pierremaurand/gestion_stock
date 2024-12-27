@@ -3,6 +3,7 @@ package com.pierremaurand.backend.role;
 import com.pierremaurand.backend.common.BaseEntity;
 import com.pierremaurand.backend.utilisateur.Utilisateur;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -21,6 +22,9 @@ import lombok.experimental.SuperBuilder;
 public class Role extends BaseEntity{
 
     private String nom; 
+
+    @Column(name = "entreprise_id")
+    private Integer entrepriseId;
 
     @ManyToOne
     @JoinColumn(name = "utilisateur_id")

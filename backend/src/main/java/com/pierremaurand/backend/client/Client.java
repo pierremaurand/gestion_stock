@@ -6,6 +6,7 @@ import com.pierremaurand.backend.commandeClient.CommandeClient;
 import com.pierremaurand.backend.common.Adresse;
 import com.pierremaurand.backend.common.BaseEntity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -35,6 +36,9 @@ public class Client extends BaseEntity{
     private String email;
 
     private String telephone;
+
+    @Column(name = "entreprise_id")
+    private Integer entrepriseId;
 
     @OneToMany(mappedBy = "client")
     private List<CommandeClient> commandeClients;
