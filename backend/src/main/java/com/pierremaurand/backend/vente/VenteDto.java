@@ -22,6 +22,10 @@ public class VenteDto {
 
     private LocalDate dateVente; 
 
+    private String commentaire;
+
+    private Integer entrepriseId;
+
     private List<LigneVenteDto> ligneVentes;
 
     public static VenteDto fromEntity(Vente obj) {
@@ -32,7 +36,9 @@ public class VenteDto {
         return VenteDto.builder()
                 .id(obj.getId())
                 .code(obj.getCode())
+                .commentaire(obj.getCommentaire())
                 .dateVente(obj.getDateVente())
+                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 
@@ -44,7 +50,9 @@ public class VenteDto {
         return Vente.builder()
                 .id(obj.getId())
                 .code(obj.getCode())
+                .commentaire(obj.getCommentaire())
                 .dateVente(obj.getDateVente())
+                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 }

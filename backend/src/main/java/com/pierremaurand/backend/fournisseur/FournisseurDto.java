@@ -30,6 +30,8 @@ public class FournisseurDto {
 
     private String telephone;
 
+    private Integer entrepriseId;
+
     private List<CommandeFournisseurDto> commandeFournisseurs;
 
     public static FournisseurDto fromEntity(Fournisseur obj) {
@@ -45,6 +47,7 @@ public class FournisseurDto {
                 .email(obj.getEmail())
                 .telephone(obj.getTelephone())
                 .photo(obj.getPhoto())
+                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 
@@ -61,6 +64,7 @@ public class FournisseurDto {
                 .email(obj.getEmail())
                 .telephone(obj.getTelephone())
                 .photo(obj.getPhoto())
+                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 }

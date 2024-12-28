@@ -23,6 +23,8 @@ public class CategorieDto {
 
     private List<ArticleDto> articles;
 
+    private Integer entrepriseId;
+
     public static CategorieDto fromEntity(Categorie entity) {
         if(entity == null) {
             return null;
@@ -32,6 +34,7 @@ public class CategorieDto {
             .id(entity.getId())
             .code(entity.getCode())
             .designation(entity.getDesignation())
+            .entrepriseId(entity.getEntrepriseId())
             .build();
     }
 
@@ -44,6 +47,7 @@ public class CategorieDto {
             .id(dto.getId())
             .code(dto.getCode())
             .designation(dto.getDesignation())
+            .entrepriseId(dto.getEntrepriseId())
             .build();
     }
 }

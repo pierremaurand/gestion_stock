@@ -29,6 +29,8 @@ public class Vente extends BaseEntity{
     @Column(name = "date_vente")
     private LocalDate dateVente; 
 
+    private String commentaire;
+
     @Column(name = "entreprise_id")
     private Integer entrepriseId;
 

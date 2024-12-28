@@ -22,6 +22,8 @@ public class LigneCommandeFournisseurDto {
 
     private double prixUnitaire;
 
+    private Integer entrepriseId;
+
     private CommandeFournisseurDto commandeFournisseur;
 
     public static LigneCommandeFournisseurDto fromEntity(LigneCommandeFournisseur obj) {
@@ -33,6 +35,7 @@ public class LigneCommandeFournisseurDto {
                 .id(obj.getId())
                 .quantite(obj.getQuantite())
                 .prixUnitaire(obj.getPrixUnitaire())
+                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 
@@ -45,6 +48,7 @@ public class LigneCommandeFournisseurDto {
                 .id(obj.getId())
                 .quantite(obj.getQuantite())
                 .prixUnitaire(obj.getPrixUnitaire())
+                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 }

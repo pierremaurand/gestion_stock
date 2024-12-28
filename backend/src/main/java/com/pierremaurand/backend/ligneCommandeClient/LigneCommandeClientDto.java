@@ -22,6 +22,8 @@ public class LigneCommandeClientDto {
 
     private double prixUnitaire;
 
+    private Integer entrepriseId;
+
     private CommandeClientDto commandeClient;
 
     public static LigneCommandeClientDto fromEntity(LigneCommandeClient obj) {
@@ -34,6 +36,7 @@ public class LigneCommandeClientDto {
                 .quantite(obj.getQuantite())
                 .prixUnitaire(obj.getPrixUnitaire())
                 .commandeClient(CommandeClientDto.fromEntity(obj.getCommandeClient()))
+                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 
@@ -47,6 +50,7 @@ public class LigneCommandeClientDto {
                 .quantite(obj.getQuantite())
                 .prixUnitaire(obj.getPrixUnitaire())
                 .commandeClient(CommandeClientDto.toEntity(obj.getCommandeClient()))
+                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 

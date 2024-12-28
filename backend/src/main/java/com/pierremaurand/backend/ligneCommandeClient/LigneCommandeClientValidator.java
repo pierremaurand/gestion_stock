@@ -16,6 +16,10 @@ public class LigneCommandeClientValidator {
         } else {
             if(dto.getArticle() == null){
                 errors.add("Veuillez selectionner un article");
+             } else {
+                if(dto.getArticle().getId() == null){
+                    errors.add("Veuillez selectionner un article valid");
+                 }
              }
 
             if(dto.getQuantite() == 0) {
@@ -28,6 +32,10 @@ public class LigneCommandeClientValidator {
 
             if(dto.getCommandeClient() == null) {
                 errors.add("Veuillez selectionner une commande client");
+            } else {
+                if(dto.getCommandeClient().getId() == null) {
+                    errors.add("Veuillez selectionner une commande client valid");
+                }
             }
         }
 

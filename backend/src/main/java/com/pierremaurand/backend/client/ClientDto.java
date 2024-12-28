@@ -30,6 +30,8 @@ public class ClientDto {
 
     private String telephone;
 
+    private Integer entrepriseId;
+
     private List<CommandeClientDto> commandeClients;
 
     public static ClientDto fromEntity(Client obj) {
@@ -45,6 +47,7 @@ public class ClientDto {
             .photo(obj.getPhoto())
             .email(obj.getEmail())
             .telephone(obj.getTelephone())
+            .entrepriseId(obj.getEntrepriseId())
             .build();
     }
 
@@ -61,6 +64,7 @@ public class ClientDto {
             .photo(obj.getPhoto())
             .email(obj.getEmail())
             .telephone(obj.getTelephone())
+            .entrepriseId(obj.getEntrepriseId())
             .build();
     }
 }
