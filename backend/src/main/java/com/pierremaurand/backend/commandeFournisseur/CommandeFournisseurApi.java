@@ -1,4 +1,4 @@
-package com.pierremaurand.backend.utilisateur;
+package com.pierremaurand.backend.commandeFournisseur;
 
 import java.util.List;
 
@@ -10,17 +10,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-public interface UtilisateurApi {
+public interface CommandeFournisseurApi {
 
     @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<UtilisateurDto> save(@RequestBody UtilisateurDto dto);
+    ResponseEntity<CommandeFournisseurDto> save(@RequestBody CommandeFournisseurDto dto);
 
     @GetMapping(value = "/{id}/id", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<UtilisateurDto> findById(@PathVariable Integer id);
+    ResponseEntity<CommandeFournisseurDto> findById(@PathVariable Integer id);
 
-    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<List<UtilisateurDto>> findAll();
+    @GetMapping(value = "/{code}/code", produces = MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<CommandeFournisseurDto> findByCode(@PathVariable String code);
+
+    @GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<List<CommandeFournisseurDto>> findAll();
 
     @DeleteMapping(value = "/{id}/delete")
     void delete(@PathVariable Integer id);
+
 }

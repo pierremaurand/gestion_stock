@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gestion_stock
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        session_factory:
+          statement_inspector: com.pierremaurand.backend.interceptor.Interceptor
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+application:
+  file:
+    uploads:
+      photos-output-path: ./uploads
