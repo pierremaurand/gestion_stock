@@ -15,7 +15,6 @@ public class UtilisateurValidator {
             errors.add("Veuillez renseigner le prénom de l'utiisateur");
             errors.add("Veuillez renseigner la date de naissance de l'utiisateur");
             errors.add("Veuillez renseigner l'email de l'utiisateur");
-            errors.add("Veuillez renseigner le mot de passe de l'utiisateur");
             errors.add("Veuillez renseigner l'adresse de l'utiisateur");
         } else {
             if(!StringUtils.hasLength(dto.getNom())) {
@@ -32,10 +31,6 @@ public class UtilisateurValidator {
 
             if(!StringUtils.hasLength(dto.getEmail())) {
                 errors.add("Veuillez renseigner l'email de l'utiisateur");
-            }
-
-            if(!StringUtils.hasLength(dto.getMotDePasse())) {
-                errors.add("Veuillez renseigner le mot de passe de l'utiisateur");
             }
 
             if(dto.getAdresse() == null) {
@@ -57,6 +52,14 @@ public class UtilisateurValidator {
                     errors.add("Le champs 'pays' est obligatoire");
                 }
             }
+
+            if(dto.getRoles() != null) {
+                dto.getRoles().forEach(role -> {
+                    if(!StringUtils.hasLength(role.getNom())) {
+                        errors.add("Veuillez selectionner un role valide");
+                    } 
+                });
+            } 
         }
 
         return errors;

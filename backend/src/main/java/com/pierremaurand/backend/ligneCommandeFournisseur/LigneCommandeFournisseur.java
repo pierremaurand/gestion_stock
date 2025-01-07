@@ -33,9 +33,6 @@ public class LigneCommandeFournisseur extends BaseEntity{
     @Column(name = "prix_unitaire")
     private double prixUnitaire;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @ManyToOne
     @JoinColumn(name = "commande_fournisseur_id")
     private CommandeFournisseur commandeFournisseur;

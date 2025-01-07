@@ -27,9 +27,6 @@ public class Categorie extends BaseEntity{
 
     private String designation;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @OneToMany(mappedBy = "categorie")
     private List<Article> articles;
 

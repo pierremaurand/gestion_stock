@@ -38,7 +38,6 @@ public class VenteDto {
                 .code(obj.getCode())
                 .commentaire(obj.getCommentaire())
                 .dateVente(obj.getDateVente())
-                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 
@@ -52,7 +51,6 @@ public class VenteDto {
                 .code(obj.getCode())
                 .commentaire(obj.getCommentaire())
                 .dateVente(obj.getDateVente())
-                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 }

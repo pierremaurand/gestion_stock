@@ -37,9 +37,6 @@ public class Fournisseur extends BaseEntity{
 
     private String telephone;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @OneToMany(mappedBy = "fournisseur")
     private List<CommandeFournisseur> commandeFournisseurs;
 }

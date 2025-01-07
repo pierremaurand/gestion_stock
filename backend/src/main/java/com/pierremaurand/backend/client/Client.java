@@ -37,9 +37,6 @@ public class Client extends BaseEntity{
 
     private String telephone;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @OneToMany(mappedBy = "client")
     private List<CommandeClient> commandeClients;
 }

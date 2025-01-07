@@ -19,8 +19,6 @@ public class RoleDto {
 
     private UtilisateurDto utilisateur;
 
-    private Integer entrepriseId;
-
     public static RoleDto fromEntity(Role obj) {
         if(obj == null) {
             return null;
@@ -29,7 +27,7 @@ public class RoleDto {
         return RoleDto.builder()
                 .id(obj.getId())
                 .nom(obj.getNom())
-                .entrepriseId(obj.getEntrepriseId())
+                .utilisateur(UtilisateurDto.fromEntity(obj.getUtilisateur()))
                 .build();
     }
 
@@ -41,7 +39,7 @@ public class RoleDto {
         return Role.builder()
                 .id(obj.getId())
                 .nom(obj.getNom())
-                .entrepriseId(obj.getEntrepriseId())
+                .utilisateur(UtilisateurDto.toEntity(obj.getUtilisateur()))
                 .build();
     }
 }

@@ -2,9 +2,9 @@ package com.pierremaurand.backend.utilisateur;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.pierremaurand.backend.common.Adresse;
-import com.pierremaurand.backend.entreprise.Entreprise;
 import com.pierremaurand.backend.role.RoleDto;
 
 import lombok.AllArgsConstructor;
@@ -34,8 +34,6 @@ public class UtilisateurDto {
 
     private String photo;
 
-    private Entreprise entreprise;
-
     private List<RoleDto> roles;
 
     public static UtilisateurDto fromEntity(Utilisateur obj) {
@@ -48,8 +46,8 @@ public class UtilisateurDto {
                 .nom(obj.getNom())
                 .prenom(obj.getPrenom())
                 .email(obj.getEmail())
-                .dateDeNaissance(obj.getDateDeNaissance())
                 .motDePasse(obj.getMotDePasse())
+                .dateDeNaissance(obj.getDateDeNaissance())
                 .adresse(obj.getAdresse())
                 .photo(obj.getPhoto())
                 .build();
@@ -65,8 +63,8 @@ public class UtilisateurDto {
                 .nom(obj.getNom())
                 .prenom(obj.getPrenom())
                 .email(obj.getEmail())
-                .dateDeNaissance(obj.getDateDeNaissance())
                 .motDePasse(obj.getMotDePasse())
+                .dateDeNaissance(obj.getDateDeNaissance())
                 .adresse(obj.getAdresse())
                 .photo(obj.getPhoto())
                 .build();

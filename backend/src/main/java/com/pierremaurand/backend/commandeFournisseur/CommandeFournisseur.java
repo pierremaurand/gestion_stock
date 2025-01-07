@@ -38,9 +38,6 @@ public class CommandeFournisseur extends BaseEntity{
     @JoinColumn(name = "fournisseur_id")
     private Fournisseur fournisseur;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @OneToMany(mappedBy = "commandeFournisseur")
     @Column(name = "ligne_commande_fournisseurs")
     private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;

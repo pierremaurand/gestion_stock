@@ -33,9 +33,6 @@ public class LigneVente extends BaseEntity{
     @Column(name = "prix_unitaire")
     private double prixUnitaire;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @ManyToOne
     @JoinColumn(name = "vente_id")
     private Vente vente;

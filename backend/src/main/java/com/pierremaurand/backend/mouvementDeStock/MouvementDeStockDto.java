@@ -38,7 +38,6 @@ public class MouvementDeStockDto {
                 .quantite(obj.getQuantite())
                 .typeMouvement(obj.getTypeMouvement())
                 .article(ArticleDto.fromEntity(obj.getArticle()))
-                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 
@@ -53,7 +52,6 @@ public class MouvementDeStockDto {
                 .quantite(obj.getQuantite())
                 .typeMouvement(obj.getTypeMouvement())
                 .article(ArticleDto.toEntity(obj.getArticle()))
-                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 }

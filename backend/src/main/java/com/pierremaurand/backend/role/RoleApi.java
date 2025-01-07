@@ -1,4 +1,4 @@
-package com.pierremaurand.backend.entreprise;
+package com.pierremaurand.backend.role;
 
 import java.util.List;
 
@@ -10,18 +10,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-public interface EntrepriseApi {
+public interface RoleApi {
 
     @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<EntrepriseDto> save(@RequestBody EntrepriseDto dto);
+    ResponseEntity<RoleDto> save(@RequestBody RoleDto dto);
 
     @GetMapping(value = "/{id}/id", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<EntrepriseDto> findById(@PathVariable Integer id);
+    ResponseEntity<RoleDto> findById(@PathVariable Integer id);
+
+    @GetMapping(value = "/{id}/utilisateur", produces = MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<List<RoleDto>> findByUtilisateur(@PathVariable Integer id);
 
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<List<EntrepriseDto>> findAll();
+    ResponseEntity<List<RoleDto>> findAll();
 
     @DeleteMapping(value = "/{id}/delete")
     void delete(@PathVariable Integer id);
-
 }

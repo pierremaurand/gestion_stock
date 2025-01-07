@@ -36,9 +36,6 @@ public class Article extends BaseEntity{
 
     private String photo;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @ManyToOne
     @JoinColumn(name = "categorie_id")
     private Categorie categorie;

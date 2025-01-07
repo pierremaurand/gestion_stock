@@ -35,7 +35,6 @@ public class LigneCommandeFournisseurDto {
                 .id(obj.getId())
                 .quantite(obj.getQuantite())
                 .prixUnitaire(obj.getPrixUnitaire())
-                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 
@@ -48,7 +47,6 @@ public class LigneCommandeFournisseurDto {
                 .id(obj.getId())
                 .quantite(obj.getQuantite())
                 .prixUnitaire(obj.getPrixUnitaire())
-                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 }

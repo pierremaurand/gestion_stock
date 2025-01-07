@@ -33,9 +33,6 @@ public class LigneCommandeClient extends BaseEntity{
     @Column(name = "prix_unitaire")
     private double prixUnitaire;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @ManyToOne
     @JoinColumn(name = "commande_client_id")
     private CommandeClient commandeClient;

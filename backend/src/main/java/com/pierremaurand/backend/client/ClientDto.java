@@ -47,7 +47,6 @@ public class ClientDto {
             .photo(obj.getPhoto())
             .email(obj.getEmail())
             .telephone(obj.getTelephone())
-            .entrepriseId(obj.getEntrepriseId())
             .build();
     }
 
@@ -64,7 +63,6 @@ public class ClientDto {
             .photo(obj.getPhoto())
             .email(obj.getEmail())
             .telephone(obj.getTelephone())
-            .entrepriseId(obj.getEntrepriseId())
             .build();
     }
 }

@@ -38,9 +38,6 @@ public class CommandeClient extends BaseEntity{
     @JoinColumn(name = "client_id")
     private Client client;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @OneToMany(mappedBy = "commandeClient")
     @Column(name = "ligne_commande_clients")
     private List<LigneCommandeClient> ligneCommandeClients;

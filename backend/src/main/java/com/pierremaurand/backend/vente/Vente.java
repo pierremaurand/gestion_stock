@@ -31,9 +31,6 @@ public class Vente extends BaseEntity{
 
     private String commentaire;
 
-    @Column(name = "entreprise_id")
-    private Integer entrepriseId;
-
     @OneToMany(mappedBy = "vente")
     private List<LigneVente> ligneVentes;
 }

@@ -47,7 +47,6 @@ public class FournisseurDto {
                 .email(obj.getEmail())
                 .telephone(obj.getTelephone())
                 .photo(obj.getPhoto())
-                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 
@@ -64,7 +63,6 @@ public class FournisseurDto {
                 .email(obj.getEmail())
                 .telephone(obj.getTelephone())
                 .photo(obj.getPhoto())
-                .entrepriseId(obj.getEntrepriseId())
                 .build();
     }
 }

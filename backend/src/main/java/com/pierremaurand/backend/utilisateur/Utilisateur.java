@@ -1,18 +1,22 @@
 package com.pierremaurand.backend.utilisateur;
 
+import java.security.Principal;
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.pierremaurand.backend.common.Adresse;
 import com.pierremaurand.backend.common.BaseEntity;
-import com.pierremaurand.backend.entreprise.Entreprise;
 import com.pierremaurand.backend.role.Role;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,7 +30,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Utilisateur extends BaseEntity{
+public class Utilisateur extends BaseEntity implements UserDetails, Principal{
 
     private String nom; 
 
@@ -46,11 +50,29 @@ public class Utilisateur extends BaseEntity{
 
     private String photo;
 
-    @ManyToOne
-    @JoinColumn(name = "entreprise_id")
-    private Entreprise entreprise;
-
     @OneToMany(mappedBy = "utilisateur")
     private List<Role> roles;
+
+    @Override
+    public String getName() {
+        return nom + " " + prenom;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles.stream()
+                .map(r -> new SimpleGrantedAuthority(r.getNom()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public String getPassword() {
+        return motDePasse;
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
 
 }
